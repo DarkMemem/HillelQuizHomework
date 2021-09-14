@@ -7,6 +7,7 @@ class CustomUser(AbstractUser):
     avatar = models.ImageField(upload_to='profile/', default='default.jpg')
     birthday = models.DateField(null=True, blank=True)
     city = models.CharField(max_length=50, null=True, blank=True)
+    rating = models.PositiveSmallIntegerField(null=True, blank=True)
 
     def __str__(self):
         return self.username
