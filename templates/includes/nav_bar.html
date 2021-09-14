@@ -11,6 +11,9 @@
           <li class="nav-item">
               <a class="nav-link" href="{% url 'quizzes:list' %}">Exam list</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'quizzes:result_list' %}">Result list</a>
+          </li>
 <!--        <li class="nav-item"><a class="nav-link" href="/contacts/">Contacts</a></li>-->
 <!--        <li class="nav-item"><a class="nav-link" href="/about/">About Us</a></li>-->
       </ul>
@@ -31,10 +34,6 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">Профиль {{ user.username }}</a></li>
               <li><a class="dropdown-item" href="{% url 'password_change' %}">Изменить пароль</a></li>
-              {% if user.is_superuser %}
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'admin:login' %}">Admin</a></li>
-              {% endif %}
           {% else %}
             <li><a class="dropdown-item" href="{% url 'accounts:login' %}">Вход</a></li>
             <li><hr class="dropdown-divider"></li>
